@@ -2,6 +2,7 @@ import { FC, useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import BrandName from "../../assets/myfit-logo.png";
 import { AiOutlineUnorderedList } from "react-icons/ai";
+import { VscChromeClose } from "react-icons/vsc";
 
 const NavbarCustom: FC = () => {
 	const [scrollDirection, setScrollDirection] = useState("");
@@ -126,7 +127,7 @@ const NavbarCustom: FC = () => {
 					</div>
 				</div>
 			</Container>
-			<Button className="d-md-none z-3 position-fixed m-2" onClick={()=>setOpen(prev => !prev)}><AiOutlineUnorderedList /></Button>
+			<Button className="d-md-none z-3 position-fixed m-2" onClick={()=>setOpen(prev => !prev)} style={{backgroundColor: '#45A188'}}>{open ? <VscChromeClose /> :<AiOutlineUnorderedList />}</Button>
 		</>
 	);
 };
