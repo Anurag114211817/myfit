@@ -5,7 +5,7 @@ import { FC } from "react";
 const OnlineTraining: FC = () => {
 	return (
 		<Container fluid className='my-5 py-5'>
-			<Row className='px-5'>
+			<Row className='px-md-5 px-3'>
 				<Col md={6} className="order-1 order-md-0">
 					<Image src={Img} className="w-100"/>
 				</Col>

@@ -4,7 +4,7 @@ import Img from "../../assets/linkedin-sales.png";
 const BusinessGrowth = () => {
 	return (
 		<Container fluid className="mt-5 pt-5">
-			<Row className='px-5'>
+			<Row className='px-md-5 px-3'>
 				<Col md={6}>
 					<div className='h4'>BUSINESS GROWTH</div>
 					<div className='display-4 fw-medium mt-3'>

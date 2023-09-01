@@ -28,7 +28,7 @@ const Hero: FC = () => {
 				</Col>
 				<Col
 					md={6}
-					style={{ height: "100svh", overflow: "hidden" }}
+					style={{ height: window.innerWidth < 786 ? "70svh" : "100svh", overflow: "hidden" }}
 					className='position-relative order-0 order-md-1'>
 					<video autoPlay loop muted style={{ height: "100%", transform: 'translateX(-15%)'}}>
 						<source src={BackgroundVideo} type='video/mp4' />

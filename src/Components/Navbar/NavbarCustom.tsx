@@ -1,9 +1,11 @@
 import { FC, useEffect, useState } from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import BrandName from "../../assets/myfit-logo.png";
+import { AiOutlineUnorderedList } from "react-icons/ai";
 
 const NavbarCustom: FC = () => {
 	const [scrollDirection, setScrollDirection] = useState("");
+	const [open, setOpen] = useState(false)
 
 	useEffect(() => {
 		let lastScrollY = window.pageYOffset;
@@ -28,12 +30,13 @@ const NavbarCustom: FC = () => {
 	return (
 		<>
 			<Navbar
-				className='px-3 py-1 position-fixed w-100 z-3'
+				className='px-3 py-1 position-fixed w-100 z-3 d-none d-md-block'
 				variant='dark'
 				style={{
 					backgroundColor: "#000a",
-					transition: '250ms',
-					transform: scrollDirection === "down" ? "translateY(-90px)" : "translateY(0)",
+					transition: "250ms",
+					transform:
+						scrollDirection === "down" ? "translateY(-90px)" : "translateY(0)",
 				}}>
 				<Container fluid className='p-3 d-flex justify-content-between'>
 					<img
@@ -77,6 +80,53 @@ const NavbarCustom: FC = () => {
 					</div>
 				</Container>
 			</Navbar>
+			<Container
+				fluid
+				className='z-2 d-md-none position-fixed w-100 bg-black d-flex justify-content-center align-items-center'
+				style={{ height: "100svh", transition: '250ms', transform: open ? 'translateY(0)' : 'translateY(-100svh)' }}>
+				<div className='d-flex justify-content-center flex-column text-center gap-5'>
+					<img
+						src={BrandName}
+						height='50'
+						className=''
+						alt='React Bootstrap logo'
+					/>
+					<div className='gap-2 d-flex flex-column'>
+						<Nav.Link className='fw-bold'  onClick={()=>setOpen(prev => !prev)}>
+							HOME
+						</Nav.Link>
+						<Nav.Link className='fw-bold'  onClick={()=>setOpen(prev => !prev)}>
+							ABOUT US
+						</Nav.Link>
+						<Nav.Link className='fw-bold'  onClick={()=>setOpen(prev => !prev)}>
+							FEATURE
+						</Nav.Link>
+						<Nav.Link className='fw-bold'  onClick={()=>setOpen(prev => !prev)}>
+							FIND A TRAINER
+						</Nav.Link>
+						<Nav.Link className='fw-bold'  onClick={()=>setOpen(prev => !prev)}>
+							BLOGS
+						</Nav.Link>
+						<Nav.Link className='fw-bold'  onClick={()=>setOpen(prev => !prev)}>
+							CONTACT US
+						</Nav.Link>
+						<Nav.Link className='fw-bold'  onClick={()=>setOpen(prev => !prev)}>
+							CAREER
+						</Nav.Link>
+					</div>
+					<div>
+						<Button variant='outline-light' className='px-4 py-2 rounded-4	'>
+							Login
+						</Button>
+						<Button
+							variant='outline-light'
+							className='px-4 py-2 rounded-4 ms-3'>
+							Get Start
+						</Button>
+					</div>
+				</div>
+			</Container>
+			<Button className="d-md-none z-3 position-fixed m-2" onClick={()=>setOpen(prev => !prev)}><AiOutlineUnorderedList /></Button>
 		</>
 	);
 };

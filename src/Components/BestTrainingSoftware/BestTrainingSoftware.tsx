@@ -18,7 +18,7 @@ type BestTrainingSoftwareTypes = {
 const BestTrainingSoftware: FC<BestTrainingSoftwareTypes> = ({heading, tagLine, data, active, setActive, images, h}: BestTrainingSoftwareTypes) => {
 	return (
 		<Container fluid>
-			<Row className='px-5'>
+			<Row className='px-md-5 px-3'>
 				<div className='h1  '>
 					{heading}
 				</div>
