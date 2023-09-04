@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Card, Col, Image, Row } from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -17,6 +17,8 @@ type CarouselCustomType = {
 const CarouselCustom: FC<CarouselCustomType> = ({
 	data,
 }: CarouselCustomType) => {
+	const [width, setWidth] = useState(window.innerWidth);
+
 	const responsive = {
 		tab: {
 			breakpoint: { max: 768, min: 576 },
@@ -30,9 +32,20 @@ const CarouselCustom: FC<CarouselCustomType> = ({
 		},
 	};
 
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			setWidth(window.innerWidth);
+		});
+		return () => {
+			window.removeEventListener("resize", () => {
+				setWidth(window.innerWidth);
+			});
+		};
+	}, []);
+
 	return (
 		<>
-			{window.innerWidth <= 768 && (
+			{width <= 768 ? (
 				<Carousel
 					responsive={responsive}
 					autoPlay={true}
@@ -41,7 +54,7 @@ const CarouselCustom: FC<CarouselCustomType> = ({
 					ssr={true}
 					infinite={true}
 					customTransition='all .5s'
-          // centerMode={true}
+					// centerMode={true}
 					transitionDuration={1000}>
 					{data.map((ele, idx) => (
 						<Card
@@ -63,8 +76,7 @@ const CarouselCustom: FC<CarouselCustomType> = ({
 						</Card>
 					))}
 				</Carousel>
-			)}
-			{window.innerWidth > 768 && (
+			) : (
 				<Row className='px-lg-5 px-3 align-items-lg-stretch'>
 					{data.map((ele, idx) => (
 						<Col xs={3} key={idx}>

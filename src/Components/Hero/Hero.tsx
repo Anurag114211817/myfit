@@ -1,9 +1,20 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import BackgroundVideo from "../../assets/mfm1.mp4";
 import Poster from "../../assets/poster.png";
 
 const Hero: FC = () => {
+	const [width, setWidth] = useState(window.innerWidth)
+	useEffect(() => {
+		window.addEventListener("resize", () => {
+			setWidth(window.innerWidth);
+		});
+		return () => {
+			window.removeEventListener("resize", () => {
+				setWidth(window.innerWidth);
+			});
+		};
+	}, []);
 	return (
 		<>
 			<Row>
@@ -27,7 +38,7 @@ const Hero: FC = () => {
 				<Col
 					md={6}
 					style={{
-						height: window.innerWidth < 768 ? "25rem" : 688,
+						height: width < 768 ? "29rem" : 688,
 						overflow: "hidden",
 					}}
 					className='position-relative order-0 order-md-1'>
@@ -39,7 +50,7 @@ const Hero: FC = () => {
 						style={{
 							height: "100%",
 							transform:
-								window.innerWidth < 768 ? "translateX(-15%)" : "translateX(20)",
+								width < 768 ? "translateX(-15%)" : "translateX(20)",
 						}}>
 						<source src={BackgroundVideo} type='video/mp4' />
 					</video>
