@@ -15,7 +15,7 @@ const Footer: FC = () => {
 				</div>
 			</div>
 			<Row className='px-lg-5 px-3 mx-lg-5 py-5'>
-				<Col md={3} sm={12} xs={12}>
+				<Col md={3} xs={12}>
 					<Image src={BrandName} className='w-50 mb-3' />
 					<p>
 						At MFM, we make group workouts fun, daily food healthy & tasty,
@@ -25,7 +25,7 @@ const Footer: FC = () => {
 						free.#BeBetterEveryDay
 					</p>
 				</Col>
-				<Col md={3} sm={6} xs={12} className='ps-md-5'>
+				<Col md={3} xs={6} className='ps-md-5'>
 					<div className='fw-bold mb-4'>Company</div>
 					<div>
 						<ul className='list-unstyled'>
@@ -38,7 +38,7 @@ const Footer: FC = () => {
 						</ul>
 					</div>
 				</Col>
-				<Col md={3} sm={6} xs={12}>
+				<Col md={3} xs={6}>
 					<div className='fw-bold mb-4'>Tools</div>
 					<div>
 						<ul className='list-unstyled'>
@@ -49,7 +49,7 @@ const Footer: FC = () => {
 						</ul>
 					</div>
 				</Col>
-				<Col md={3} sm={6} xs={12}>
+				<Col md={3} xs={6}>
 					<ul className='list-unstyled'>
 						<li>Privacy Policy</li>
 						<li>Terms & Condition</li>
