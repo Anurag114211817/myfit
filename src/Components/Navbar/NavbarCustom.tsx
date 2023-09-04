@@ -65,7 +65,7 @@ const NavbarCustom: FC = () => {
 							alt='React Bootstrap logo'
 						/>
 						<Nav className=''>
-							<Nav.Link className='fw-bold' href='#'>
+							<Nav.Link className='fw-bold active' href='#'>
 								HOME
 							</Nav.Link>
 							<Nav.Link className='fw-bold' href='#'>
@@ -123,32 +123,32 @@ const NavbarCustom: FC = () => {
 									HOME
 								</Nav.Link>
 								<Nav.Link
-									className='fw-bold'
+									className='fw-bold text-white-50'
 									onClick={() => setOpen((prev) => !prev)}>
 									ABOUT US
 								</Nav.Link>
 								<Nav.Link
-									className='fw-bold'
+									className='fw-bold text-white-50'
 									onClick={() => setOpen((prev) => !prev)}>
 									FEATURE
 								</Nav.Link>
 								<Nav.Link
-									className='fw-bold'
+									className='fw-bold text-white-50'
 									onClick={() => setOpen((prev) => !prev)}>
 									FIND A TRAINER
 								</Nav.Link>
 								<Nav.Link
-									className='fw-bold'
+									className='fw-bold text-white-50'
 									onClick={() => setOpen((prev) => !prev)}>
 									BLOGS
 								</Nav.Link>
 								<Nav.Link
-									className='fw-bold'
+									className='fw-bold text-white-50'
 									onClick={() => setOpen((prev) => !prev)}>
 									CONTACT US
 								</Nav.Link>
 								<Nav.Link
-									className='fw-bold'
+									className='fw-bold text-white-50'
 									onClick={() => setOpen((prev) => !prev)}>
 									CAREER
 								</Nav.Link>
