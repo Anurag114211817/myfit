@@ -13,6 +13,12 @@ import Img6 from "./assets/trainer-schedule.png";
 import Img7 from "./assets/001.png";
 import Img8 from "./assets/002.png";
 import Img9 from "./assets/003.png";
+import { Container } from "react-bootstrap";
+import OneForAll from "./Components/OneForAll/OneForAll";
+import TrackYourProgress from "./Components/TrackYourProgress/TrackYourProgress";
+import SetsApart from "./Components/SetsApart/SetsApart";
+import GotYouCovered from "./Components/GotYouCovered/GotYouCovered";
+import Footer from "./Components/Footer/Footer";
 
 const App: FC = () => {
 	const heading1 = "My Fit Mantra: The Best Training Software for Trainers";
@@ -92,31 +98,38 @@ const App: FC = () => {
 	return (
 		<>
 			<NavbarCustom />
-			<Hero />
-			<OnlineTraining />
-			<BestTrainingSoftware
-				{...{
-					heading: heading1,
-					tagLine: tagLine1,
-					data: dataSet1,
-					active: active1,
-					setActive: setActive1,
-					images: imageSet1,
-					h: 120
-				}}
-			/>
-			<BusinessGrowth />
-			<BestTrainingSoftware
-				{...{
-					heading: heading2,
-					tagLine: tagLine2,
-					data: dataSet2,
-					active: active2,
-					setActive: setActive2,
-					images: imageSet2,
-					h: 55
-				}}
-			/>
+			<Container fluid style={{ maxWidth: 1400 }}>
+				<Hero />
+				<OnlineTraining />
+				<BestTrainingSoftware
+					{...{
+						heading: heading1,
+						tagLine: tagLine1,
+						data: dataSet1,
+						active: active1,
+						setActive: setActive1,
+						images: imageSet1,
+						h: 110,
+					}}
+				/>
+				<BusinessGrowth />
+				<BestTrainingSoftware
+					{...{
+						heading: heading2,
+						tagLine: tagLine2,
+						data: dataSet2,
+						active: active2,
+						setActive: setActive2,
+						images: imageSet2,
+						h: 55,
+					}}
+				/>
+				<OneForAll />
+				<TrackYourProgress />
+				<SetsApart />
+				<GotYouCovered />
+				<Footer />
+			</Container>
 		</>
 	);
 };

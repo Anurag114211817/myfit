@@ -7,7 +7,22 @@
   font-family: 'Kanit', sans-serif;
 }
 
+body, html {
+  max-width: 100svw;
+  max-width: 100dvw;
+  overflow-x: hidden;
+}
+
 .hover.active, .hover:hover {
   background-color: #18181B;
   color: #fff !important;
+}
+
+.react-multi-carousel-item {
+  display: flex;
+  justify-content: center;
+}
+
+ul > li {
+  cursor: pointer;
 }

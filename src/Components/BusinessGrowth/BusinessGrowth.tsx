@@ -1,11 +1,12 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Col, Image, Row } from "react-bootstrap";
 import Img from "../../assets/linkedin-sales.png";
+import { FC } from "react";
 
-const BusinessGrowth = () => {
+const BusinessGrowth: FC = () => {
 	return (
-		<Container fluid className="mt-5 pt-5">
-			<Row className='px-md-5 px-3'>
-				<Col md={6}>
+		<>
+			<Row className='px-md-5 px-3 py-5 my-5'>
+				<Col md={6} className="order-1 order-md-0">
 					<div className='h4'>BUSINESS GROWTH</div>
 					<div className='display-4 fw-medium mt-3'>
 						Get and keep more clients.
@@ -18,13 +19,13 @@ const BusinessGrowth = () => {
 						clients.
 					</div>
 				</Col>
-				<Col md={6}>
-					<div className='overflow-hidden rounded-5' style={{ height: "75%" }}>
-						<Image src={Img} className='w-100' />
+				<Col md={6} className="order-0 order-md-1">
+					<div className='overflow-y-hidden rounded-5' style={{ height: "75%" }}>
+						<Image src={Img} className='w-100' loading="lazy"/>
 					</div>
 				</Col>
 			</Row>
-		</Container>
+		</>
 	);
 };
 
